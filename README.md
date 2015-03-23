@@ -6,7 +6,9 @@ Base docker image to run **Erlang** applications in [`azk`](http://azk.io)
 Versions (tags)
 ---
 
+<versions>
 - [`latest`, `1`, `1.0`](https://github.com/azukiapp/docker-erlang/blob/master/Dockerfile)
+</versions>
 
 Image content:
 ---
