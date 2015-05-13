@@ -7,7 +7,7 @@ Versions (tags)
 ---
 
 <versions>
-- [`latest`, `1`, `1.0`](https://github.com/azukiapp/docker-erlang/blob/master/Dockerfile)
+- [`latest`, `1`, `1.0`](https://github.com/azukiapp/docker-erlang/blob/master/1.0/Dockerfile)
 </versions>
 
 Image content:
