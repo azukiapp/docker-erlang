@@ -4,6 +4,7 @@
 Base docker image to run **Erlang** applications in [`azk`](http://azk.io)
 
 Versions (tags)
+[![Circle CI](https://circleci.com/gh/azukiapp/docker-erlang.svg?style=svg)][circle-ci]
 ---
 
 <versions>
