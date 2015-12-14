@@ -1,0 +1,42 @@
+#!/usr/bin/env bats
+
+load ./test_helper
+
+image_name="azukiapp/erlang"
+ image_tag="18.1"
+image="${image_name}:${image_tag}"
+
+PKGNAME="erlang"
+VERSION="18"
+
+@test "version is correct" {
+  run ${DOCKER} run ${image} sh -c "erl -eval 'erlang:display(erlang:system_info(otp_release)), halt().'  -noshell"
+  assert_success
+  assert_match "${VERSION}"
+}
+
+@test "should erlang packages intalled" {
+  run ${DOCKER} run ${image} apk info -v
+  assert_success
+  assert_match "${PKGNAME}-kernel-${VERSION}"
+  assert_match "${PKGNAME}-stdlib-${VERSION}"
+  assert_match "${PKGNAME}-compiler-${VERSION}"
+  assert_match "${PKGNAME}-kernel-${VERSION}"
+  assert_match "${PKGNAME}-stdlib-${VERSION}"
+  assert_match "${PKGNAME}-compiler-${VERSION}"
+  assert_match "${PKGNAME}-crypto-${VERSION}"
+  assert_match "${PKGNAME}-syntax-tools-${VERSION}"
+  assert_match "${PKGNAME}-inets-${VERSION}"
+  assert_match "${PKGNAME}-ssl-${VERSION}"
+  assert_match "${PKGNAME}-public-key-${VERSION}"
+  assert_match "${PKGNAME}-asn1-${VERSION}"
+  assert_match "${PKGNAME}-sasl-${VERSION}"
+  assert_match "${PKGNAME}-erl-interface-${VERSION}"
+  assert_match "${PKGNAME}-dev-${VERSION}"
+}
+
+@test "cache is empty" {
+  run ${DOCKER} run ${image} sh -c "ls -1 /var/cache/apk | wc -l"
+  assert_success
+  [ "${lines[@]: -1}" = "0" ]
+}
