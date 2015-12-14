@@ -3,28 +3,22 @@
 
 Base docker image to run **Erlang** applications in [`azk`](http://azk.io)
 
-Versions (tags)
 [![Circle CI](https://circleci.com/gh/azukiapp/docker-erlang.svg?style=svg)][circle-ci]
+[![ImageLayers Size](https://img.shields.io/imagelayers/image-size/azukiapp/erlang/latest.svg?style=plastic)][imageslayers]
+[![ImageLayers Layers](https://img.shields.io/imagelayers/layers/azukiapp/erlang/latest.svg?style=plastic)][imageslayers]
+
+Erlang Versions (tags)
 ---
 
 <versions>
 - [`latest`, `18`, `18.1`](https://github.com/azukiapp/docker-erlang/blob/master/18.1/Dockerfile)
 </versions>
 
-Image content:
----
-
-- Ubuntu 14.04
-- Git
-- VIM
-
-Database:
-
-- Erlang
+Image content use http://images.azk.io/#/alpine
 
 ### Usage with `azk`
 
-Example of using this image with [azk](http://azk.io):
+Example of using that image with [azk][azk]:
 
 ```js
 /**
@@ -34,16 +28,14 @@ Example of using this image with [azk](http://azk.io):
 // Adds the systems that shape your system
 systems({
   "my-app": {
-    // Dependent systems
-    depends: [], // postgres, mysql, mongodb ...
-    // More images:  http://images.azk.io
+    // More info about erlang image: http://images.azk.io/#/erlang?from=images-azkfile-erlang
     image: {"docker": "azukiapp/erlang"},
     // Steps to execute before running instances
     provision: [
     ],
     workdir: "/azk/#{manifest.dir}",
     shell: "/bin/bash",
-    command: "# command to run app. i.g.: `./start`",
+    // command: "erl ...",
     wait: {"retry": 20, "timeout": 1000},
     mounts: {
       '/azk/#{manifest.dir}': path("."),
@@ -68,11 +60,24 @@ systems({
 To create the image `azukiapp/erlang`, execute the following command on the erlang folder:
 
 ```sh
-$ docker build -t azukiapp/erlang .
+$ docker build -t azukiapp/erlang:18 18
 ```
 
-Logs
----
+To run erl console:
+
+```sh
+$ docker run -d -t -i azukiapp/erlang erl
+```
+
+### Tests
+
+Obs: Very slow process
+
+```
+$ make test
+```
+
+### Logs
 
 ```sh
 # with azk
@@ -86,5 +91,12 @@ $ docker logs <CONTAINER_ID>
 
 Azuki Dockerfiles distributed under the [Apache License][license].
 
-[license]: ./LICENSE
+[azk]: http://azk.io
+[postgresql-client]: https://pkgs.alpinelinux.org/package/main/x86_64/postgresql-client
+[alpine-packages]: http://pkgs.alpinelinux.org/
+[alpine]: http://alpinelinux.org/
 
+[issues]: https://github.com/azukiapp/docker-erlang/issues
+[circle-ci]: https://circleci.com/gh/azukiapp/docker-erlang
+[imageslayers]: https://imagelayers.io/?images=azukiapp/erlang:latest
+[license]: ./LICENSE
