@@ -7,7 +7,7 @@ Versions (tags)
 ---
 
 <versions>
-- [`latest`, `1`, `1.0`](https://github.com/azukiapp/docker-erlang/blob/master/1.0/Dockerfile)
+- [`latest`, `18`, `18.1`](https://github.com/azukiapp/docker-erlang/blob/master/18.1/Dockerfile)
 </versions>
 
 Image content:
@@ -29,7 +29,7 @@ Example of using this image with [azk](http://azk.io):
 /**
  * Documentation: http://docs.azk.io/Azkfile.js
  */
- 
+
 // Adds the systems that shape your system
 systems({
   "my-app": {
