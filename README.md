@@ -1,7 +1,7 @@
 [azukiapp/erlang](http://images.azk.io/#/erlang)
 ==================
 
-Base docker image to run **Erlang** applications in [`azk`](http://azk.io)
+Base docker image to run **Erlang** applications in [`azk`][(http://azk.io)]azk]
 
 [![Circle CI](https://circleci.com/gh/azukiapp/docker-erlang.svg?style=svg)][circle-ci]
 [![ImageLayers Size](https://img.shields.io/imagelayers/image-size/azukiapp/erlang/latest.svg?style=plastic)][imageslayers]
@@ -55,6 +55,29 @@ systems({
 });
 ```
 
+## Extend image with `Dockerfile`
+
+Install more packages:
+
+```dockerfile
+# Dockerfile
+FROM azukiapp/erlang:18
+
+# install postgressql-client
+RUN  apk add --update postgresql-client \
+  && rm -rf /var/cache/apk/* /var/tmp/* \
+
+CMD ["erl"]
+```
+
+To build the image:
+
+```sh
+$ docker build -t azukiapp/erlang:18
+```
+
+To more packages, access [alpine packages][alpine-packages]
+
 ### Usage with `docker`
 
 To create the image `azukiapp/erlang`, execute the following command on the erlang folder:
@@ -92,11 +115,9 @@ $ docker logs <CONTAINER_ID>
 Azuki Dockerfiles distributed under the [Apache License][license].
 
 [azk]: http://azk.io
-[postgresql-client]: https://pkgs.alpinelinux.org/package/main/x86_64/postgresql-client
 [alpine-packages]: http://pkgs.alpinelinux.org/
-[alpine]: http://alpinelinux.org/
 
 [issues]: https://github.com/azukiapp/docker-erlang/issues
 [circle-ci]: https://circleci.com/gh/azukiapp/docker-erlang
 [imageslayers]: https://imagelayers.io/?images=azukiapp/erlang:latest
-[license]: ./LICENSE
+[license]: https://github.com/azukiapp/docker-erlang/blob/master/LICENSE
