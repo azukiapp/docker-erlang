@@ -29,6 +29,7 @@ RUN  apk update \
     "${PKGNAME}-sasl${TAG}" \
     "${PKGNAME}-erl-interface${TAG}" \
     "${PKGNAME}-dev${TAG}" \
+    "${PKGNAME}-eunit${TAG}" \
     "${PKGNAME}${TAG}" \
   && rm -rf /var/cache/apk/* /var/tmp/* /tmp/*
 
