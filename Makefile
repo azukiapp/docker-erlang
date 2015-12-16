@@ -22,7 +22,7 @@ build-no-cache:
 
 test: bats
 
-.PHONY: all prepare build test
+.PHONY: all build build-no-cache test
 
 
 TEST_FILES=$(shell find test -name '*.bats' -type f -print0 | xargs -0n1 | sort -u)
