@@ -1,4 +1,3 @@
-
 ROOT_PATH := $(shell pwd)
 DEPS_PATH := ${ROOT_PATH}/deps
 BATS_VERSION := "master"
@@ -11,19 +10,16 @@ BATS := ${DEPS_PATH}/bin/bats
 all: build test
 
 build:
-	${DOCKER} build -t ${IMAGE_NAME} 18
-	${DOCKER} build -t ${IMAGE_NAME}:18 18
-	${DOCKER} build -t ${IMAGE_NAME}:18.1 18
+	${DOCKER} build -t ${IMAGE_NAME}:latest 18
+	${DOCKER} build -t ${IMAGE_NAME}:18     18
 
 build-no-cache:
-	${DOCKER} build --rm --no-cache -t ${IMAGE_NAME} 18
-	${DOCKER} build --rm --no-cache -t ${IMAGE_NAME}:18 18
-	${DOCKER} build --rm --no-cache -t ${IMAGE_NAME}:18.1 18
+	${DOCKER} build --rm --no-cache -t ${IMAGE_NAME}:latest 18
+	${DOCKER} build --rm --no-cache -t ${IMAGE_NAME}:18     18
 
 test: bats
 
 .PHONY: all build build-no-cache test
-
 
 TEST_FILES=$(shell find test -name '*.bats' -type f -print0 | xargs -0n1 | sort -u)
 bats: ${DEPS_PATH}/bats

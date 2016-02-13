@@ -1,4 +1,4 @@
-FROM azukiapp/alpine:3.2
+FROM azukiapp/alpine:3.3
 MAINTAINER Azuki <support@azukiapp.com>
 
 ENV PKGNAME erlang
@@ -8,10 +8,10 @@ ENV REPOSITORY @community
 # Get and install erlang from deb package
 RUN  apk update \
   && apk add \
-    'ncurses-terminfo-base@edge>6.0' \
-    'ncurses5-libs@edge>5.9' \
-    'ncurses-terminfo@edge>6.0' \
-    'ncurses-libs@edge>6.0' \
+    'ncurses-terminfo-base' \
+    'ncurses5-libs' \
+    'ncurses-terminfo' \
+    'ncurses-libs' \
   && TAG="${REPOSITORY}>${ERLANG_VERSION}" \
   && apk add \
     "${PKGNAME}-kernel${TAG}" \
