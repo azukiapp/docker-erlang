@@ -73,7 +73,7 @@ CMD ["erl"]
 To build the image:
 
 ```sh
-$ docker build -t azukiapp/erlang:18
+$ docker build -t azukiapp/erlang:18 18
 ```
 
 To more packages, access [alpine packages][alpine-packages]
