@@ -1,11 +1,10 @@
 [azukiapp/erlang](http://images.azk.io/#/erlang)
 ==================
 
-Base docker image to run **Erlang** applications in [`azk`][(http://azk.io)]azk]
+Base docker image to run **Erlang** applications in [azk.io][azk]
 
-[![Circle CI](https://circleci.com/gh/azukiapp/docker-erlang.svg?style=svg)][circle-ci]
-[![ImageLayers Size](https://img.shields.io/imagelayers/image-size/azukiapp/erlang/latest.svg?style=plastic)][imageslayers]
-[![ImageLayers Layers](https://img.shields.io/imagelayers/layers/azukiapp/erlang/latest.svg?style=plastic)][imageslayers]
+[![Circle CI][circleci-badge]][circleci]
+[![][imagelayers-badge]][imagelayers]
 
 Erlang Versions (tags)
 ---
@@ -118,6 +117,11 @@ Azuki Dockerfiles distributed under the [Apache License][license].
 [alpine-packages]: http://pkgs.alpinelinux.org/
 
 [issues]: https://github.com/azukiapp/docker-erlang/issues
-[circle-ci]: https://circleci.com/gh/azukiapp/docker-erlang
-[imageslayers]: https://imagelayers.io/?images=azukiapp/erlang:latest
+
+[circleci]: https://circleci.com/gh/azukiapp/docker-erlang
+[circleci-badge]: https://circleci.com/gh/azukiapp/docker-erlang.svg?style=svg
+
+[imagelayers]: https://imagelayers.io/?images=azukiapp/erlang:latest,azukiapp/erlang:18,azukiapp/erlang:18.1
+[imagelayers-badge]: https://imagelayers.io/badge/azukiapp/erlang:latest.svg
+
 [license]: https://github.com/azukiapp/docker-erlang/blob/master/LICENSE
