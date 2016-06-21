@@ -1,11 +1,11 @@
-ROOT_PATH := $(shell pwd)
-DEPS_PATH := ${ROOT_PATH}/deps
+ROOT_PATH    := $(shell pwd)
+DEPS_PATH    := ${ROOT_PATH}/deps
 BATS_VERSION := "master"
-IMAGE_NAME := "azukiapp/erlang"
+IMAGE_NAME   := "azukiapp/erlang"
 
 # bins
 DOCKER := $(shell which adocker || which docker)
-BATS := ${DEPS_PATH}/bin/bats
+BATS   := ${DEPS_PATH}/bin/bats
 
 all: build test
 

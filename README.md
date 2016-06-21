@@ -10,7 +10,8 @@ Erlang Versions (tags)
 ---
 
 <versions>
-- [`latest`, `18`, `18.1`](https://github.com/azukiapp/docker-erlang/blob/master/18.1/Dockerfile)
+- [`latest`, `18`, `18.3`](https://github.com/azukiapp/docker-erlang/blob/v18/18/Dockerfile)
+-                 [`18.1`](https://github.com/azukiapp/docker-erlang/blob/v18.1/18/Dockerfile)
 </versions>
 
 Image content use http://images.azk.io/#/alpine
@@ -28,7 +29,7 @@ Example of using that image with [azk][azk]:
 systems({
   "my-app": {
     // More info about erlang image: http://images.azk.io/#/erlang?from=images-azkfile-erlang
-    image: {"docker": "azukiapp/erlang"},
+    image: {"docker": "azukiapp/erlang:18"},
     // Steps to execute before running instances
     provision: [
     ],
@@ -88,7 +89,7 @@ $ docker build -t azukiapp/erlang:18 18
 To run erl console:
 
 ```sh
-$ docker run -d -t -i azukiapp/erlang erl
+$ docker run -d -t -i azukiapp/erlang:18 erl
 ```
 
 ### Tests
