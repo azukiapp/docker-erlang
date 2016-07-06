@@ -11,8 +11,30 @@ Erlang Versions (tags)
 
 <versions>
 - [`latest`, `18`, `18.3`](https://github.com/azukiapp/docker-erlang/blob/v18/18/Dockerfile)
--                 [`18.1`](https://github.com/azukiapp/docker-erlang/blob/v18.1/18/Dockerfile)
+- [                `18.1`](https://github.com/azukiapp/docker-erlang/blob/v18.1/18/Dockerfile)
 </versions>
+
+Instaled packages
+---
+
+- [erlang-kernel       ](https://pkgs.alpinelinux.org/package/v3.4/community/x86_64/erlang-kernel       )
+- [erlang-stdlib       ](https://pkgs.alpinelinux.org/package/v3.4/community/x86_64/erlang-stdlib       )
+- [erlang-compiler     ](https://pkgs.alpinelinux.org/package/v3.4/community/x86_64/erlang-compiler     )
+- [erlang-kernel       ](https://pkgs.alpinelinux.org/package/v3.4/community/x86_64/erlang-kernel       )
+- [erlang-stdlib       ](https://pkgs.alpinelinux.org/package/v3.4/community/x86_64/erlang-stdlib       )
+- [erlang-compiler     ](https://pkgs.alpinelinux.org/package/v3.4/community/x86_64/erlang-compiler     )
+- [erlang-crypto       ](https://pkgs.alpinelinux.org/package/v3.4/community/x86_64/erlang-crypto       )
+- [erlang-syntax-tools ](https://pkgs.alpinelinux.org/package/v3.4/community/x86_64/erlang-syntax-tools )
+- [erlang-inets        ](https://pkgs.alpinelinux.org/package/v3.4/community/x86_64/erlang-inets        )
+- [erlang-ssl          ](https://pkgs.alpinelinux.org/package/v3.4/community/x86_64/erlang-ssl          )
+- [erlang-public-key   ](https://pkgs.alpinelinux.org/package/v3.4/community/x86_64/erlang-public-key   )
+- [erlang-asn1         ](https://pkgs.alpinelinux.org/package/v3.4/community/x86_64/erlang-asn1         )
+- [erlang-sasl         ](https://pkgs.alpinelinux.org/package/v3.4/community/x86_64/erlang-sasl         )
+- [erlang-erl-interface](https://pkgs.alpinelinux.org/package/v3.4/community/x86_64/erlang-erl-interface)
+- [erlang-dev          ](https://pkgs.alpinelinux.org/package/v3.4/community/x86_64/erlang-dev          )
+- [erlang-eunit        ](https://pkgs.alpinelinux.org/package/v3.4/community/x86_64/erlang-eunit        )
+- [erlang-parsetools   ](https://pkgs.alpinelinux.org/package/v3.4/community/x86_64/erlang-parsetools   )
+- [erlang-xmerl        ](https://pkgs.alpinelinux.org/package/v3.4/community/x86_64/erlang-xmerl        )
 
 Image content use http://images.azk.io/#/alpine
 
@@ -122,7 +144,7 @@ Azuki Dockerfiles distributed under the [Apache License][license].
 [circleci]: https://circleci.com/gh/azukiapp/docker-erlang
 [circleci-badge]: https://circleci.com/gh/azukiapp/docker-erlang.svg?style=svg
 
-[imagelayers]: https://imagelayers.io/?images=azukiapp/erlang:latest,azukiapp/erlang:18,azukiapp/erlang:18.1
+[imagelayers]: https://imagelayers.io/?images=azukiapp/erlang:latest,azukiapp/erlang:18,azukiapp/erlang:18.3,azukiapp/erlang:18.1
 [imagelayers-badge]: https://imagelayers.io/badge/azukiapp/erlang:latest.svg
 
 [license]: https://github.com/azukiapp/docker-erlang/blob/master/LICENSE

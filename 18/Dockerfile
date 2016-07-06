@@ -30,6 +30,7 @@ RUN  apk update \
     "${PKGNAME}-dev${TAG}" \
     "${PKGNAME}-eunit${TAG}" \
     "${PKGNAME}-parsetools${TAG}" \
+    "${PKGNAME}-xmerl${TAG}" \
     "${PKGNAME}${TAG}" \
   && rm -rf /var/cache/apk/* /var/tmp/* /tmp/*
 
